@@ -2,14 +2,21 @@ package Entities;
 
 import java.util.Set;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name="Compte")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Compte {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,9 +39,7 @@ public class Compte {
 	 * @param banque
 	 * @param clients
 	 */
-	public Compte(int id, String numero, double solde, Banque banque, Set<Client> clients) {
-		super();
-		this.id = id;
+	public Compte(String numero, double solde, Banque banque, Set<Client> clients) {
 		this.numero = numero;
 		this.solde = solde;
 		this.banque = banque;

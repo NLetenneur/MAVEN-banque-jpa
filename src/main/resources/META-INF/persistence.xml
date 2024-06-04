@@ -7,13 +7,12 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
 			<property name="jakarta.persistence.jdbc.url"
-				value="jdbc:mysql://127.0.0.1/3306/banque" />
+				value="jdbc:mysql://127.0.0.1/banque" />
 			<property name="jakarta.persistence.jdbc.user" value="root" />
 			<property name="jakarta.persistence.jdbc.password" value="" />
 			<property
 				name="jakarta.persistence.schema-generation.database.action"
-				value="drop-and-
-create" />
+				value="drop-and-create" />
 			<property name="hibernate.show_sql" value="true" />
 		</properties>
 	</persistence-unit>

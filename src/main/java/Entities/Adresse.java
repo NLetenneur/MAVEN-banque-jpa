@@ -8,7 +8,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="adresse")
-public class Adresse {
+public class Adresse{
+	/**
+	 * 
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected int id;
@@ -24,9 +27,7 @@ public class Adresse {
 	 * @param codePostal
 	 * @param ville
 	 */
-	public Adresse(int id, int numero, String rue, String codePostal, String ville) {
-		super();
-		this.id = id;
+	public Adresse(int numero, String rue, String codePostal, String ville) {
 		this.numero = numero;
 		this.rue = rue;
 		this.codePostal = codePostal;

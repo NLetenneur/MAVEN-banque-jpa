@@ -1,17 +1,22 @@
 package Entities;
 
+
+
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name="operation")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Operation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,9 +34,7 @@ public class Operation {
 	 * @param motif
 	 * @param compte
 	 */
-	public Operation(int id, LocalDateTime date, double montant, String motif, Compte compte) {
-		super();
-		this.id = id;
+	public Operation(LocalDateTime date, double montant, String motif, Compte compte) {
 		this.date = date;
 		this.montant = montant;
 		this.motif = motif;

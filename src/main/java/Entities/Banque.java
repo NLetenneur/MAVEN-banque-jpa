@@ -22,13 +22,10 @@ public class Banque {
 	/**
 	 * Constructor
 	 * 
-	 * @param id
 	 * @param nom
 	 * @param comptes
 	 */
-	public Banque(int id, String nom, Set<Compte> comptes) {
-		super();
-		this.id = id;
+	public Banque(String nom, Set<Compte> comptes) {
 		this.nom = nom;
 		this.comptes = comptes;
 	}
