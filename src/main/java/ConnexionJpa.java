@@ -73,6 +73,9 @@ public class ConnexionJpa {
 		LivretA cpt03 = new LivretA("452dfv", 68406.36, b03, listCli03, 5.2);
 		em.persist(cpt03);
 		
+		LivretA cpt04 = new LivretA("452dfv", 68406.36, b03, listCli02, 1.2);
+		em.persist(cpt04);
+		
 		LocalDateTime dOp01 = LocalDateTime.now();
 		
 		Virement op01 = new Virement(dOp01, 100.50, "test", cpt01, "moi");
